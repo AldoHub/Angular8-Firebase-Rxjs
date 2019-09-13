@@ -1,0 +1,15 @@
+<header>
+    <div>
+        <h1>NgFire <br/> Posts</h1>
+        <p>Powered by Angular 8 &amp; Firebase Firestore</p>
+    </div>
+    <img src="../../assets/2661880.svg">
+</header>
+
+<div class="posts">
+    <div class="post" *ngFor="let post of posts | async">
+        <a [routerLink]="[ '/post', post.payload.doc.id ]">
+        <div class="cover" [ngStyle]="{'background-image': 'url('+ post.payload.doc.data().cover +')'}"></div>
+        </a>
+    </div>
+</div>
